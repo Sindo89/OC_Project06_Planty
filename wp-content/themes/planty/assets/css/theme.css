@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "Syne";
+  src: url(../fonts/Syne/Syne-VariableFont_wght.ttf);
+}
+/* VARIABLES  */
+
+:root {
+  --primary: #dc9f96;
+  --secondary: #3b8e46;
+  --text-dark: #000000;
+  --text-light: #ffffff;
+}
+
+/* GENERAL  */
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Syne", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* HEADER  */
+
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  height: 4rem;
+  margin-left: 2rem;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu li {
+  padding: 3rem 8rem;
+  color: black;
+  font-size: 1.6rem;
+}
+
+.menu li:last-child {
+  background: var(--primary);
+  margin-right: 0px;
+  font-weight: 700;
+}
+
+.menu li:last-child a {
+  color: var(--text-light);
+}
