@@ -62,3 +62,11 @@ a {
 .menu li:last-child a {
   color: var(--text-light);
 }
+
+/* FOOTER  */
+
+footer {
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 2rem;
+}
