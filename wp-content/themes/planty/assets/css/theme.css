@@ -9,6 +9,7 @@
   --secondary: #3b8e46;
   --text-dark: #000000;
   --text-light: #ffffff;
+  --hover: #c02e44;
 }
 
 /* GENERAL  */
@@ -21,12 +22,12 @@ body {
   font-family: "Syne", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  color: #333;
+  color: var(--text-dark);
 }
 
 a {
   text-decoration: none;
-  color: #333;
+  color: var(--text-dark);
 }
 
 /* HEADER  */
@@ -48,15 +49,33 @@ a {
 }
 
 .menu li {
-  padding: 3rem 8rem;
-  color: black;
+  padding: 3rem 4rem;
+  color: var(--text-dark);
   font-size: 1.6rem;
+}
+
+.menu li:hover {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.menu li.current-menu-item {
+  font-weight: 700;
+  font-size: 1.3rem;
 }
 
 .menu li:last-child {
   background: var(--primary);
   margin-right: 0px;
   font-weight: 700;
+  transition: all 0.2s ease-in-out;
+  padding: 3rem 8rem;
+  margin-left: 4rem;
+}
+
+.menu li:last-child:hover {
+  background: var(--hover);
+  font-size: 1.6rem;
 }
 
 .menu li:last-child a {
@@ -69,4 +88,53 @@ footer {
   font-size: 1.6rem;
   text-align: center;
   padding: 2rem;
+}
+
+/* HERO  */
+
+#hero {
+  box-shadow: #e3d9d0 0px 10px 0px;
+  border-bottom-left-radius: 50% 9%;
+  border-bottom-right-radius: 50% 9%;
+}
+
+/* MEET-US  */
+/* form  */
+
+input[type="text"],
+input[type="email"] {
+  width: 400px;
+  height: 71px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Syne", Sans-serif;
+}
+
+textarea {
+  border-radius: 5px;
+  border: none;
+  font-family: "Syne", Sans-serif;
+  resize: none;
+  width: 400px;
+  height: 240px;
+}
+
+label {
+  display: block;
+  font-family: "Syne", Sans-serif;
+  font-size: 20px;
+  margin: 1.5rem 0rem;
+}
+
+input[type="submit"] {
+  display: block;
+  border-radius: 5px;
+  font-family: "Syne", Sans-serif;
+  border: none;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: #e0b9b4;
+  padding: 20px 65px 20px 65px;
+  color: #fff;
+  margin: 1.5rem auto;
 }
