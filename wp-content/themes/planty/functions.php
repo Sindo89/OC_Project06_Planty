@@ -21,3 +21,12 @@ function add_admin_link_to_menu($items, $args)
   return $items; // retourne le menu
 }
 add_filter('wp_nav_menu_items', 'add_admin_link_to_menu', 10, 2); // ajoute le filtre pour ajouter le lien vers l'admin dans le menu
+
+
+add_filter('wpcf7_form_elements', 'delicious_wpcf7_form_elements');
+
+function delicious_wpcf7_form_elements($form)
+{
+  $form = do_shortcode($form);
+  return $form;
+}
