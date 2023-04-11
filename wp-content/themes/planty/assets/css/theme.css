@@ -62,32 +62,55 @@ input[type="submit"]:hover {
   font-size: 1.6rem;
 }
 
-.menu li:hover {
+.menu li a:hover {
   font-weight: 700;
   font-size: 1.3rem;
 }
 
-.menu li.current-menu-item {
+.menu li.current-menu-item a {
   font-weight: 700;
   font-size: 1.3rem;
 }
 
-.menu li:last-child {
+.meet-menu {
+  order: 1;
+}
+
+.admin-menu {
+  order: 2;
+}
+
+.order-menu {
+  order: 3;
   background: var(--primary);
   margin-right: 0px;
   font-weight: 700;
   transition: all 0.2s ease-in-out;
   padding: 3rem 8rem;
   margin-left: 4rem;
-}
-
-.menu li:last-child:hover {
-  background: var(--hover);
   font-size: 1.6rem;
 }
 
-.menu li:last-child a {
+.order-menu a {
   color: var(--text-light);
+}
+
+.menu .order-menu a:hover {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.order-menu:hover {
+  background: var(--hover);
+}
+
+.menu .order-menu.order-menu.current-menu-item {
+  background: var(--hover);
+}
+
+.menu .order-menu.current-menu-item a {
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
 /* FOOTER  */
@@ -107,6 +130,16 @@ footer {
 }
 
 /* MEET-US FORM */
+.meet-us-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 580px;
+  background-image: url("../images/flower2.png");
+  background-repeat: no-repeat;
+  background-position: 0% 85%;
+}
 
 input[type="text"],
 input[type="email"] {
@@ -171,6 +204,10 @@ input[type="submit"]:hover {
   display: flex;
 }
 
+.quantity span:hover {
+  background: var(--hover);
+}
+
 .quantity input[type="number"] {
   border: none;
   width: 51px;
@@ -180,7 +217,6 @@ input[type="submit"]:hover {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   pointer-events: none;
-  padding-left: 1.5rem;
 }
 
 .plus,
@@ -299,21 +335,25 @@ input[type="submit"]:hover {
   bottom: 0px;
 }
 
-/* TABLET  */
+/* TABLET & MOBILE */
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .menu {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: absolute;
-    top: 90px;
+    top: 0;
     left: 0;
     width: 100%;
+    height: 100vh;
     background-color: #fff;
     box-shadow: var(--box-shadow);
     z-index: 1;
     text-align: center;
+    transform: translateX(-100%);
     opacity: 0;
-    transition: all 0.3s ease-in-out;
+    transition: all 1s ease-in-out;
   }
 
   .menu li {
@@ -322,69 +362,141 @@ input[type="submit"]:hover {
     display: block;
   }
 
-  .menu li:last-child {
-    margin-left: 0;
-    margin-right: 0;
-    background-color: var(--primary);
-    color: var(--text-light);
+  .menu li.current-menu-item a {
+    font-weight: 400;
+    font-size: 3rem;
   }
 
-  .menu li:last-child:hover {
-    background-color: var(--hover);
-    color: var(--text-light);
+  .menu li a:hover {
+    font-weight: 400;
+    font-size: 3rem;
+    opacity: 0.6;
+  }
+
+  .menu .order-menu a:hover {
+    font-weight: 400;
+    font-size: 3rem;
+    color: var(--hover);
+  }
+
+  .menu .order-menu {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #fff;
+  }
+
+  .menu .order-menu a {
+    color: var(--primary);
+    font-weight: 400;
+  }
+
+  .menu .order-menu.order-menu.current-menu-item {
+    background: none;
+  }
+
+  .menu .order-menu.current-menu-item a {
+    font-size: 3rem;
+    font-weight: 400;
   }
 
   .toggleburger {
     display: block;
+    position: relative;
+    z-index: 20;
+  }
+
+  #logo {
+    position: relative;
+    z-index: 20;
   }
 
   .open .menu {
-    display: block;
     opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* TABLET  */
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  input[type="text"],
+  input[type="email"] {
+    width: 350px;
+  }
+
+  textarea {
+    width: 350px;
+  }
+
+  .meet-us-form {
+    width: 550px;
+  }
+
+  .quantity input[type="number"] {
+    width: 40px;
+  }
+
+  .quantity-form input[type="submit"] {
+    padding: 2rem 1.8rem;
+    margin-left: 0.6rem;
+  }
+
+  .order-form input[type="text"],
+  .order-form input[type="email"] {
+    width: 285px;
+  }
+
+  .order-form h3 {
+    font-size: 2.8rem;
   }
 }
 
 /* MOBILE  */
 
 @media only screen and (max-width: 767px) {
-  .menu {
-    display: none;
-    position: absolute;
-    top: 90px;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: var(--box-shadow);
-    z-index: 1;
+  input[type="text"],
+  input[type="email"] {
+    width: 300px;
+  }
+
+  textarea {
+    width: 300px;
+  }
+
+  .meet-us-form {
+    width: 400px;
+    background-size: 30%;
+  }
+
+  .quantity input[type="number"] {
+    width: 75px;
+  }
+
+  .quantity-form input[type="submit"] {
+    padding: 2rem 4rem;
+  }
+
+  .order-form input[type="text"],
+  input[type="email"] {
+    width: 300px;
+  }
+
+  .order-form h3 {
+    font-size: 2.6rem;
+  }
+
+  .order-form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
   }
 
-  .menu li {
-    font-size: 3rem;
-    padding: 3.5rem;
-    display: block;
+  .vr {
+    display: none;
   }
 
-  .menu li:last-child {
-    margin-left: 0;
-    margin-right: 0;
-    background-color: var(--primary);
-    color: var(--text-light);
-  }
-
-  .menu li:last-child:hover {
-    background-color: var(--hover);
-    color: var(--text-light);
-  }
-
-  .toggleburger {
-    display: block;
-  }
-
-  .open .menu {
-    display: block;
-    opacity: 1;
+  .form-right-column {
+    margin-top: 3rem;
   }
 }

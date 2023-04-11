@@ -16,7 +16,7 @@ function my_theme_enqueue_styles()
 function add_admin_link_to_menu($items, $args)
 {
   if (is_user_logged_in() && has_nav_menu('main-menu')) { // vérifie que l'utilisateur est connecté et que le menu existe
-    $items = '<li><a href="/nous-rencontrer/">Nous rencontrer</a></li> <li><a href="' . admin_url() . '">Admin</a></li> <li><a href="/commander/)">Commander</a></li>'; // ajoute le lien vers l'admin
+    $items .= '<li class="admin-menu"><a href="' . admin_url() . '">Admin</a></li>'; // ajoute le lien vers l'admin
   }
   return $items; // retourne le menu
 }
