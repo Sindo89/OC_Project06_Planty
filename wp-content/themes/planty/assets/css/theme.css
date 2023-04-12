@@ -216,7 +216,14 @@ input[type="submit"]:hover {
   font-size: 1.6rem;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  pointer-events: none;
+  appearance: textfield;
+  outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .plus,
