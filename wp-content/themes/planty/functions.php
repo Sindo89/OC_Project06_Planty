@@ -25,14 +25,14 @@ function my_theme_enqueue_styles()
 //******************************************************************
 //Ajoute le lien vers l'admin dans le menu
 
-function add_admin_link_to_menu($items, $args)
+function add_admin_link_to_menu($items)
 {
   if (is_user_logged_in() && has_nav_menu('main-menu')) {
     $items .= '<li class="admin-menu"><a href="' . admin_url() . '">Admin</a></li>';
   }
   return $items;
 }
-add_filter('wp_nav_menu_items', 'add_admin_link_to_menu', 10, 2);
+add_filter('wp_nav_menu_items', 'add_admin_link_to_menu');
 
 //******************************************************************
 
