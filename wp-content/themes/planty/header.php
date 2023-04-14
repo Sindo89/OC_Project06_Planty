@@ -15,7 +15,7 @@
         <div id="site-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
           <?php
 
-          echo '<a href="' . esc_url(home_url('/')) . '" title="' . esc_attr(get_bloginfo('name')) . '" rel="home" itemprop="url"><img id="logo" src="' . get_stylesheet_directory_uri() . '/assets/images/logo.png" alt="logo planty"' . esc_attr(get_bloginfo('name')) . '" itemprop="logo" /></a>';
+          echo '<a href="' . esc_url(home_url('/')) . '" title="' . esc_attr(get_bloginfo('name')) . '" rel="home" itemprop="url"><img id="logo" src="' . get_stylesheet_directory_uri() . '/assets/images/logo.png" alt="logo ' . esc_attr(get_bloginfo('name')) . '" itemprop="logo" /></a>';
 
           ?>
         </div>
