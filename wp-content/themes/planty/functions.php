@@ -25,14 +25,14 @@ function my_theme_enqueue_styles()
 //******************************************************************
 //Ajoute le lien vers l'admin dans le menu
 
-function add_admin_link_to_menu($items)
+function add_admin_link_to_menu($items, $args)
 {
-  if (is_user_logged_in() && has_nav_menu('main-menu')) {
+  if ($args->theme_location == 'main-menu' && is_user_logged_in()) {
     $items .= '<li class="admin-menu"><a href="' . admin_url() . '">Admin</a></li>';
   }
   return $items;
 }
-add_filter('wp_nav_menu_items', 'add_admin_link_to_menu');
+add_filter('wp_nav_menu_items', 'add_admin_link_to_menu', 10, 2);
 
 //******************************************************************
 
@@ -65,5 +65,21 @@ function wpmu_burger_menu_scripts()
   wp_enqueue_script('burger-menu-script', get_stylesheet_directory_uri() . '/assets/js/burger-menu-script.js', array('jquery'));
 }
 add_action('wp_enqueue_scripts', 'wpmu_burger_menu_scripts');
+
+//******************************************************************
+
+
+
+
+
+
+//******************************************************************
+//Ajoute un emplacement de menu dans le footer
+
+function register_footer_menu()
+{
+  register_nav_menu('footer_menu', __('Footer Menu'));
+}
+add_action('after_setup_theme', 'register_footer_menu');
 
 //******************************************************************

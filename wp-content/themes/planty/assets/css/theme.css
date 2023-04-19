@@ -115,9 +115,13 @@ input[type="submit"]:hover {
 
 /* FOOTER  */
 
-footer {
+#footernav ul {
+  display: flex;
+  justify-content: center;
+}
+
+#footernav ul li {
   font-size: 1.6rem;
-  text-align: center;
   padding: 2rem;
 }
 
