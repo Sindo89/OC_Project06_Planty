@@ -349,7 +349,7 @@ input[type="number"]::-webkit-outer-spin-button {
 /* TABLET & MOBILE */
 
 @media only screen and (max-width: 1024px) {
-  .menu {
+  header .menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -367,45 +367,45 @@ input[type="number"]::-webkit-outer-spin-button {
     transition: all 1s ease-in-out;
   }
 
-  .menu li {
+  header .menu li {
     font-size: 3rem;
     padding: 3.5rem;
     display: block;
   }
 
-  .menu li.current-menu-item a {
+  header .menu li.current-menu-item a {
     font-weight: 400;
     font-size: 3rem;
   }
 
-  .menu li a:hover {
+  header .menu li a:hover {
     font-weight: 400;
     font-size: 3rem;
     opacity: 0.6;
   }
 
-  .menu .order-menu a:hover {
+  header .menu .order-menu a:hover {
     font-weight: 400;
     font-size: 3rem;
     color: var(--hover);
   }
 
-  .menu .order-menu {
+  header .menu .order-menu {
     margin-left: 0;
     margin-right: 0;
     background-color: #fff;
   }
 
-  .menu .order-menu a {
+  header .menu .order-menu a {
     color: var(--primary);
     font-weight: 400;
   }
 
-  .menu .order-menu.order-menu.current-menu-item {
+  header .menu .order-menu.order-menu.current-menu-item {
     background: none;
   }
 
-  .menu .order-menu.current-menu-item a {
+  header .menu .order-menu.current-menu-item a {
     font-size: 3rem;
     font-weight: 400;
   }
